@@ -20,7 +20,7 @@ const knight = {
   frameX: 0,        // Current frame in the sprite sheet (for the X-axis)
   frameY: 0,        // Current row in the sprite sheet (not needed if one row)
   frameWidth: 16,   // Width of a single frame in the sprite sheet
-  frameHeight: 16,  // Height of a single frame in the sprite sheet
+  frameHeight: 4,  // Height of a single frame in the sprite sheet
   totalFramesIdle: 4,  // Total number of frames in the idle sprite sheet
   totalFramesRun: 4,   // Assuming 6 frames for running (adjust this as needed)
   currentAnimation: 'idle', // The current animation type ('idle' or 'run')
