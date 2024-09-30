@@ -6,7 +6,7 @@ const knightIdle = new Image();
 knightIdle.src = 'https://cdn.discordapp.com/attachments/1283040679026757809/1289736098209202186/knight_m_idle_anim_f0-sheet.png?ex=66fbe217&is=66fa9097&hm=269d36a10c3427ba7f3e2043c562217ad7b3c31aae91164e93d2bf3ee230eab2&'; // Your idle sprite sheet
 
 const knightRun = new Image();
-knightRun.src = 'https://example.com/knight_run.png'; // Replace with your running sprite sheet
+knightRun.src = 'https://cdn.discordapp.com/attachments/1283040679026757809/1289736098448412682/knight_m_run_anim_f0-sheet.png?ex=66fbe218&is=66fa9098&hm=ed489a285577e435e3b8fde70acaf5e25ce010df5c174f3d34758baeee5750d0&'; // Replace with your running sprite sheet
 
 const tileSize = 64;
 const mapWidth = canvas.width;
