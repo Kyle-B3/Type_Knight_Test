@@ -19,10 +19,10 @@ const knight = {
   speed: 5,         // Movement speed
   frameX: 0,        // Current frame in the sprite sheet (for the X-axis)
   frameY: 0,        // Current row in the sprite sheet (not needed if one row)
-  frameWidth: 64,   // Width of a single frame in the sprite sheet
-  frameHeight: 64,  // Height of a single frame in the sprite sheet
+  frameWidth: 16,   // Width of a single frame in the sprite sheet
+  frameHeight: 16,  // Height of a single frame in the sprite sheet
   totalFramesIdle: 4,  // Total number of frames in the idle sprite sheet
-  totalFramesRun: 6,   // Assuming 6 frames for running (adjust this as needed)
+  totalFramesRun: 4,   // Assuming 6 frames for running (adjust this as needed)
   currentAnimation: 'idle', // The current animation type ('idle' or 'run')
   frameDelay: 8,     // Delay before switching to the next frame
   frameCounter: 0    // Counter to control the animation speed
