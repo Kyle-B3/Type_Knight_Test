@@ -3,7 +3,7 @@ const ctx = canvas.getContext('2d');
 
 // Load knight sprite (replace with your own sprite URL if needed)
 const knightSprite = new Image();
-knightSprite.src = 'https://example.com/knight.png'; // Add the link to your knight sprite image here
+knightSprite.src = 'https://https://opengameart.org/content/a-2d-knight/knight.png'; // Add the link to your knight sprite image here
 
 const tileSize = 64;
 const mapWidth = canvas.width;
