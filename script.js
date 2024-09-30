@@ -3,10 +3,10 @@ const ctx = canvas.getContext('2d');
 
 // Load knight sprite sheets for idle and running animations
 const knightIdle = new Image();
-knightIdle.src = 'https://cdn.discordapp.com/attachments/1283040679026757809/1289736098209202186/knight_m_idle_anim_f0-sheet.png?ex=66fbe217&is=66fa9097&hm=269d36a10c3427ba7f3e2043c562217ad7b3c31aae91164e93d2bf3ee230eab2&';  // Replace with your idle sprite sheet
+knightIdle.src = 'https://cdn.discordapp.com/attachments/1283040679026757809/1289736098209202186/knight_m_idle_anim_f0-sheet.png?ex=66fbe217&is=66fa9097&hm=269d36a10c3427ba7f3e2043c562217ad7b3c31aae91164e93d2bf3ee230eab2&'; // Your idle sprite sheet
 
 const knightRun = new Image();
-knightRun.src = 'https://cdn.discordapp.com/attachments/1283040679026757809/1289736098448412682/knight_m_run_anim_f0-sheet.png?ex=66fbe218&is=66fa9098&hm=ed489a285577e435e3b8fde70acaf5e25ce010df5c174f3d34758baeee5750d0&';    // Replace with your running sprite sheet
+knightRun.src = 'https://example.com/knight_run.png'; // Replace with your running sprite sheet
 
 const tileSize = 64;
 const mapWidth = canvas.width;
@@ -17,12 +17,12 @@ const knight = {
   x: tileSize * 3,  // Starting position on the x-axis
   y: tileSize * 3,  // Starting position on the y-axis
   speed: 5,         // Movement speed
-  frameX: 0,        // Current frame in the sprite sheet
-  frameY: 0,        // The row of the sprite sheet (if multiple rows)
+  frameX: 0,        // Current frame in the sprite sheet (for the X-axis)
+  frameY: 0,        // Current row in the sprite sheet (not needed if one row)
   frameWidth: 64,   // Width of a single frame in the sprite sheet
   frameHeight: 64,  // Height of a single frame in the sprite sheet
   totalFramesIdle: 4,  // Total number of frames in the idle sprite sheet
-  totalFramesRun: 6,   // Total number of frames in the running sprite sheet
+  totalFramesRun: 6,   // Assuming 6 frames for running (adjust this as needed)
   currentAnimation: 'idle', // The current animation type ('idle' or 'run')
   frameDelay: 8,     // Delay before switching to the next frame
   frameCounter: 0    // Counter to control the animation speed
@@ -54,6 +54,7 @@ function drawKnight() {
   let spriteSheet;
   let totalFrames;
 
+  // Determine which sprite sheet to use and the total number of frames
   if (knight.currentAnimation === 'run') {
     spriteSheet = knightRun;
     totalFrames = knight.totalFramesRun;
@@ -69,14 +70,15 @@ function drawKnight() {
     knight.frameCounter = 0; // Reset the counter
   }
 
+  // Draw the current frame of the knight
   ctx.drawImage(
-    spriteSheet,                     // Sprite sheet
-    knight.frameX * knight.frameWidth, // X position of the current frame in the sheet
-    knight.frameY * knight.frameHeight, // Y position of the current frame (for multi-row sheets)
-    knight.frameWidth,                // Width of one frame
-    knight.frameHeight,               // Height of one frame
-    knight.x, knight.y,               // Position on the canvas
-    tileSize, tileSize                // Drawn size
+    spriteSheet,                    // Source image (sprite sheet)
+    knight.frameX * knight.frameWidth, // X coordinate of the current frame on the sprite sheet
+    knight.frameY * knight.frameHeight, // Y coordinate (assuming one row, keep it 0)
+    knight.frameWidth,              // Width of the frame on the sprite sheet
+    knight.frameHeight,             // Height of the frame on the sprite sheet
+    knight.x, knight.y,             // Position to draw the knight on the canvas
+    tileSize, tileSize              // Size to draw the frame (scaled to tile size)
   );
 }
 
